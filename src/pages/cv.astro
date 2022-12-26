@@ -1,0 +1,100 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+---
+
+<BaseLayout title="Resume">
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Profile</div>
+  </div>
+
+  <div class="mb-10 text-justify">
+    As a highly motivated and results-driven software engineer student, I am
+    excited to bring my strong technical skills and passion for problem-solving
+    to a new opportunity. With a strong foundation in computer science
+    principles and a proven track record of delivering high-quality software
+    solutions, I am confident in my ability to make a valuable contribution to
+    any team or project.
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Education</div>
+  </div>
+
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement title="ESPRIT,Tunisia" subtitle="Currently" />
+    <TimeLineElement
+      title="Baccalaureate"
+      subtitle="2016,Bolbaba high School Gabes,Tunisia"
+    />
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Experience</div>
+  </div>
+
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="Web development intersnhip"
+      subtitle="Summer 2022 ,SmartNet Tunisia"
+      desc="I developed a content management system that enables Smartnet customers to easily create and customize their own websites. The system uses technologies such as HTML, CSS, PHP, JavaScript, JQuery, Ajax, and Bootstrap to provide efficient management and organization of large amounts of data and content, as well as convenience and flexibility to users. With this system, businesses can easily manage their websites and keep their content up to date"
+    />
+    <TimeLineElement
+      title="Software development intership "
+      subtitle="Summer 2021,Novavision-It Gabès"
+      desc="I developed an Invoice application using JavaFx that streamlines the invoice creation process, making it easier to create, send, and track invoices. The application uses technologies such as Java, JavaFx, SQlite, CSS, and XML to provide increased efficiency, accuracy, and convenience. By using this application, businesses can save time and reduce the risk of errors in their invoicing process"    />
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Certifications</div>
+  </div>
+
+  <ul class="list-disc mx-6 mb-10 grid gap-2">
+    <li>
+      <p>Arabic (native)</p>
+    </li>
+    <li>
+      <p>French</p>
+    </li>
+    <li>
+      <p>English</p>
+    </li>
+  </ul>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Skills</div>
+  </div>
+
+  <ul class="list-disc md:columns-5 columns-2 mx-6">
+    <li>JavaScript</li>
+    <li>C / C++</li>
+    <li>PHP</li>
+    <li>Java</li>
+    <li>Rust</li>
+    <li>SQL</li>
+    <li>CSS</li>
+    <li>SASS</li>
+    <li>HTML</li>
+    <li>Node.js</li>
+    <li>AngularJS</li>
+    <li>VUE</li>
+    <li>Astro</li>
+    <li>Symfony 4</li>
+    <li>Bootstrap</li>
+    <li>Taildwind</li>
+    <li>JQuery</li>
+    <li>Wordpress</li>
+    <li>Git</li>
+    <li>React</li>
+    <li>Flutter</li>
+    <li>Dart</li>
+    <li>Trello</li>
+    <li>Scrum</li>
+    <li>UI Design</li>
+    <li>WEB Design</li>
+    <li>Logo Design</li>
+    <li>Image Manipulation</li>
+    <li>Office Suite</li>
+    <li>Adobe Photoshop</li>
+  </ul>
+</BaseLayout>
