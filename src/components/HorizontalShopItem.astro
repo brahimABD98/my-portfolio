@@ -13,11 +13,12 @@ const {
   custom_link = false,
   custom_link_label = "",
 } = Astro.props;
+import { Picture } from '@astrojs/image/components';
 ---
 
 <div class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]">
   <div class="hero-content flex-col md:flex-row">
-    <img src={img} alt={title} class="max-w-full md:max-w-[13rem] rounded-lg" />
+    <Picture widths={[318,640]} sizes="(max-width: 800px) 100vw, 800px" aspectRatio={16/9}  src={img} alt={title} class="max-w-full md:max-w-[13rem] rounded-lg" />
     <div class="grow w-full p-5 md:p-0">
       <h1 class="text-xl font-bold">
         {title}
