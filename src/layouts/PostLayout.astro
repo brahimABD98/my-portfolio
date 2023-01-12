@@ -1,19 +1,16 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
 import BaseLayout from "./BaseLayout.astro";
 
 export interface Props {
-  content: {
-    title: string;
-    description: string;
-    pubDate?: string;
-    updatedDate?: string;
-    heroImage?: string;
-  };
+  title: string;
+  description: string;
+  pubDate?: string;
+  updatedDate?: string;
+  heroImage?: string;
 }
 
 const {
-  content: { title, description, pubDate, updatedDate, heroImage }
+  content: { title, description, pubDate, updatedDate, heroImage },
 } = Astro.props;
 ---
 
@@ -32,7 +29,7 @@ const {
         )
       }
       <div class="divider my-2"></div>
-        <slot />
+      <slot />
     </article>
   </main>
 </BaseLayout>

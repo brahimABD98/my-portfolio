@@ -1,35 +1,40 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
+
+const posts = (await Astro.glob("./projects/*.{md,mdx}")).sort(
+  (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+);
+const last_posts = posts.slice(0, 3);
 
 ---
 
 <BaseLayout>
-
-    <div class="pb-12 mt-5">
-      <div class="text-xl py-1">Hey there 👋</div>
-      <div class="text-5xl font-bold">I'm Brahim Abderrahim</div>
-      <div class="text-3xl py-3 font-bold">Software Engineer Student</div>
-      <div class="py-2">
-        <text class="text-lg">
-          As a software engineering student, 
-          I am constantly seeking out new challenges and opportunities to expand my skills and knowledge. 
-          I am passionate about using technology to solve problems and create innovative solutions,
-          and I am always looking for ways to make a positive impact through my work.          
-           </text>
-      </div>
+  <div class="pb-12 mt-5">
+    <div class="text-xl py-1">Hey there 👋</div>
+    <div class="text-5xl font-bold">I'm Brahim Abderrahim</div>
+    <div class="text-3xl py-3 font-bold">Software Engineer Student</div>
+    <div class="py-2">
+      <text class="text-lg">
+        As a software engineering student, I am constantly seeking out new
+        challenges and opportunities to expand my skills and knowledge. I am
+        passionate about using technology to solve problems and create
+        innovative solutions, and I am always looking for ways to make a
+        positive impact through my work.
+      </text>
     </div>
+  </div>
 
-    <div>
-      <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
-    </div>
+  <div>
+    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+  </div>
 
-    <HorizontalCard
+  <!-- <HorizontalCard
       title='Kaadem'
       img="/Angspringboot.webp"
       desc="A full Stack web application built using Angular/springBoot."
-      url="#"
+      url=""
       badge="NEW"
     />
     <div class="divider my-0"></div>
@@ -48,7 +53,17 @@ import HorizontalCard from "../components/HorizontalCard.astro";
     aspectRatio={4/3}
     badge=""
     
-  />
-
-
+  /> -->
+  {
+    last_posts.map((post) => (
+      <HorizontalCard
+        title={post.frontmatter.title}
+        img={post.frontmatter.heroImage}
+        desc={post.frontmatter.description}
+        url={post.url}
+        target="_self"
+      />
+      <div class="divider my-0"></div>
+    ))
+  }
 </BaseLayout>
