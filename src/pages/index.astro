@@ -2,19 +2,18 @@
 import HorizontalCard from "../components/HorizontalCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-
-const posts = (await Astro.glob("./projects/*.{md,mdx}")).sort(
-  (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+import { getCollection } from "astro:content";
+const posts = (await getCollection('project')).sort(
+(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 const last_posts = posts.slice(0, 3);
-
 ---
 
 <BaseLayout>
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Hey there 👋</div>
     <div class="text-5xl font-bold">I'm Brahim Abderrahim</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer Student</div>
+    <div class="text-3xl py-3 font-bold">Software Engineering Student</div>
     <div class="py-2">
       <text class="text-lg">
         As a software engineering student, I am constantly seeking out new
@@ -27,41 +26,16 @@ const last_posts = posts.slice(0, 3);
   </div>
 
   <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+    <div class="text-3xl w-full font-bold mb-2">My lastest projects {"</>"}</div>
   </div>
-
-  <!-- <HorizontalCard
-      title='Kaadem'
-      img="/Angspringboot.webp"
-      desc="A full Stack web application built using Angular/springBoot."
-      url=""
-      badge="NEW"
-    />
-    <div class="divider my-0"></div>
-    <HorizontalCard
-    title="Ija Campi"
-    img="/smfony4.png"
-    desc="E-commerce platform made with Symfony 4"
-    url="#"
-  />
-    <div class="divider my-0"></div>
-    <HorizontalCard
-    title="SmartKids"
-    img="/smartkids.webp"
-    desc="A desktop application for managing a kindergardens made with C++ using the Qt framework ."
-    url="#"
-    aspectRatio={4/3}
-    badge=""
-    
-  /> -->
   {
     last_posts.map((post) => (
       <HorizontalCard
-        title={post.frontmatter.title}
-        img={post.frontmatter.heroImage}
-        desc={post.frontmatter.description}
-        url={post.url}
-        target="_self"
+      title={post.data.title}
+      img={post.data.heroImage}
+      desc={post.data.description}
+      url={"/project/" +post.slug}
+      target="_self"
       />
       <div class="divider my-0"></div>
     ))

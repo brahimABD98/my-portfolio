@@ -1,17 +1,17 @@
 ---
-layout: ../../layouts/PostLayout.astro
 title: Kaddem
 description: A Web application to manage universities and students. It is a spring boot application with angular front end.
 pubDate: November 10 2022
 heroImage: "/Angspringboot.webp"
-
+height : 200
+width : 400
 ---
 
-# Kaddem Spring boot angular web application
+## Kaddem Spring boot angular web application
 
 A Web application to manage universities and students. It is a spring boot application with angular front end.
 
-## Technologies
+### Technologies
 
 Here are the technologies used in this project:
 
@@ -27,3 +27,8 @@ Here are the technologies used in this project:
 - Sass
 - Bootstrap
 - Material design
+
+### Links
+
+- [Front-end](https://github.com/brahimABD98/Angular-Kaddem-Project-1)
+- [Back-end](https://github.com/brahimABD98/SpringBoot-Kaddem-Project)
