@@ -2,7 +2,7 @@
 title: Ija campi (E-commerce platform) 
 description: a Multi-platform E-commerce  Appilcation for campers made with symfony JavaFx and CodeNameOne
 pubDate: November 10 2021
-heroImage: "/Ija Campii LogoPNG.png"
+heroImage: "/Ija Campii LogoPNG.webp"
 height : 200
 width : 400
 ---
