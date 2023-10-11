@@ -1,0 +1,48 @@
+name: Weekly Dependency Update
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Run every Sunday at midnight (UTC)
+
+jobs:
+  update_dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check for updates
+        id: check_updates
+        run: |
+          CHANGES=$(npm outdated --json)
+          if [ "$CHANGES" == "null" ]; then
+            echo "No updates found."
+            echo "::set-output name=update_minor::false"
+          else
+            echo "Updates found."
+            echo "::set-output name=update_minor::true"
+          fi
+
+      - name: Update package version
+        if: steps.check_updates.outputs.update_minor == 'true'
+        run: |
+          npm version minor --force
+          git commit -am "Bump minor version"
+
+      - name: Update dependencies
+        if: steps.check_updates.outputs.update_minor == 'true'
+        run: npm update
+
+      - name: Push changes
+        if: steps.check_updates.outputs.update_minor == 'true'
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          branch: ${{ github.ref }}
