@@ -1,9 +1,7 @@
 ---
-import { type projectSchema } from "../content/config";
 import BaseLayout from "./BaseLayout.astro";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-export interface Props extends projectSchema {}
 import { Image } from "astro:assets";
 const {
   title,
@@ -11,15 +9,12 @@ const {
   pubDate,
   updatedDate,
   heroImage,
-  aspectRatio,
-  height = 200,
-  width = 200,
 } = Astro.props;
 dayjs.extend(localizedFormat);
 const displayDate = dayjs(pubDate).format("ll");
 ---
 
-<BaseLayout title={title} description={description} image={heroImage}>
+<BaseLayout sideBarActiveItemID="project" title={title} description={description} image={heroImage}>
   <a
     href="/project"
     class="text-2xl text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
@@ -45,9 +40,7 @@ const displayDate = dayjs(pubDate).format("ll");
           <Image
             src={heroImage}
             alt={title}
-            width={width}
-            height={height}
-            format="webp"
+            format="avif"
           />
         )
       }

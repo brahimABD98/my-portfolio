@@ -2,7 +2,7 @@
 title: Smartkids
 description: Smartkids a desktop application for managing a kindergarten made with Qt framework
 pubDate: November 10 2020
-heroImage: "/smartkidslogo.webp"
+heroImage: "../images/smartkidslogo.webp"
 height : 200
 width : 200
 ---

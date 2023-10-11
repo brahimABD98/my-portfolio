@@ -6,18 +6,24 @@ import SideBar from "../components/SideBar.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
-const { image, title = SITE_TITLE, description = SITE_DESCRIPTION,includeSidebar = true  } = Astro.props;
+const {
+  image,
+  title = SITE_TITLE,
+  description = SITE_DESCRIPTION,
+  includeSidebar = true,
+  sideBarActiveItemID,
+} = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
   <head>
     <BaseHead title={title} description={description} image={image} />
-    <link rel="sitemap" href="/sitemap-index.xml">
+    <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
   <body>
     <div class="bg-base-100 drawer lg:drawer-open">
-      <input id="my-drawer" type="checkbox" class="drawer-toggle"  />
+      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content flex flex-col bg-base-100">
         <Header title={SITE_TITLE} />
         <div class="md:flex md:justify-center">
@@ -27,6 +33,7 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION,includeSidebar
         </div>
         <Footer />
       </div>
-      {includeSidebar && <SideBar />}    </div>
+      {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} />}
+    </div>
   </body>
 </html>
