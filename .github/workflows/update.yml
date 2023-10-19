@@ -34,8 +34,12 @@ jobs:
       - name: Update package version
         if: steps.check_updates.outputs.update_minor == 'true'
         run: |
-          npm version minor --force
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
           git commit -am "Bump minor version"
+          git push --set-upstream origin ${{ github.ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update dependencies
         if: steps.check_updates.outputs.update_minor == 'true'
@@ -46,3 +50,4 @@ jobs:
         uses: ad-m/github-push-action@v0.6.0
         with:
           branch: ${{ github.ref }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
