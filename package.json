@@ -16,6 +16,9 @@
     "@astrojs/sitemap": "^3.0.3",
     "@astrojs/tailwind": "^5.0.2",
     "@astrojs/vercel": "^5.2.0",
+    "@boringer-avatars/qwik": "^0.2.1",
+    "@builder.io/qwik": "^1.2.19",
+    "@qwikdev/astro": "^0.2.4",
     "astro": "^3.5.5",
     "daisyui": "^4.4.2",
     "dayjs": "^1.11.10"

@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { VisitBookEntries } from "../../components/VisitBookEntries";
+---
+
+<BaseLayout sideBarActiveItemID="visitbook" title="Visistbook">
+    <section class="p-4 md:min-w-[700px]">
+        <h1 class="text-4xl font-bold mb-4">Visitbook</h1>
+        <h2 class="text-md font-mono mb-4">Latest:</h2>
+        <VisitBookEntries />
+        <form class="mt-4 flex flex-col space-y-4">
+            <fieldset>
+                <legend class="text-2xl font-bold">Submit a Note</legend>
+                <div class="form-control p-4">
+                    <label for="username" class="label">
+                        <span class="label-text">Username:</span>
+                    </label>
+                    <input
+                        type="text"
+                        class="input input-bordered md:w-1/2"
+                        name="username"
+                        id="username"
+                    />
+                </div>
+                <div class="form-control p-4">
+                    <label for="note" class="label">
+                        <span class="label-text">Note:</span>
+                    </label>
+                    <textarea
+                        class="textarea textarea-bordered h-24 w-full"
+                        name="note"
+                        id="note"></textarea>
+                </div>
+                <div class="form-control p-4">
+                    <button type="submit" class="btn btn-primary md:w-24"
+                        >Submit</button
+                    >
+                </div>
+            </fieldset>
+        </form>
+    </section>
+</BaseLayout>
