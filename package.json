@@ -21,7 +21,8 @@
     "@qwikdev/astro": "^0.2.4",
     "astro": "^3.5.5",
     "daisyui": "^4.4.2",
-    "dayjs": "^1.11.10"
+    "dayjs": "^1.11.10",
+    "valibot": "^0.21.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.3.1",
