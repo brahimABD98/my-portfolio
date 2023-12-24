@@ -2,7 +2,7 @@
   "name": "Brahim Abderrahim Personal Website",
   "description": "Brahim Abderrahim Personal Website a Tunisian software engineer student in ESPRIT.",
   "type": "module",
-  "version": "4.0.10",
+  "version": "4.0.11",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -14,14 +14,14 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.1",
     "@astrojs/sitemap": "^3.0.3",
-    "@astrojs/tailwind": "^5.0.3",
+    "@astrojs/tailwind": "^5.0.4",
     "@astrojs/vercel": "^6.1.0",
-    "astro": "^4.0.6",
-    "daisyui": "^4.4.20",
+    "astro": "^4.0.7",
+    "daisyui": "^4.4.23",
     "dayjs": "^1.11.10"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.3.3",
+    "@astrojs/check": "^0.3.4",
     "@tailwindcss/typography": "^0.5.10",
     "typescript": "^5.3.3"
   }
